@@ -5,12 +5,12 @@ const CloseAccount = () => {
     const [accountId, setAccountId] = useState("")
     const [response, setResponse] = useState(null)
 
-    const BASE_URL = "https://localhost:7031/api/account/close-account"
+    const BASE_URL = "https://localhost:7013/api/account/close-account"
 
     const handleSubmit = async () => {
         const res = await fetch(BASE_URL, {
             method: "POST",
-            headers: { "Content-Type": "application-json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ customerId: Number(customerId), accountId: Number(accountId)})
         })
 

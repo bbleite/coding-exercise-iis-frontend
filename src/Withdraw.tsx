@@ -6,7 +6,7 @@ function Withdraw() {
     const [amount, setAmount] = useState("")
     const [response, setResponse] = useState(null)
 
-    const BASE_URL = "https://localhost:7031/api/account/withdrawal"
+    const BASE_URL = "https://localhost:7013/api/account/withdrawal"
 
     const handleChange = (setter: any) => (e: any) => {
         setter(e.target.value)
@@ -15,7 +15,7 @@ function Withdraw() {
     const handleSubmit = async () => {
         const res = await fetch(BASE_URL, {
             method: "POST",
-            headers: {"Content-type": "application-json"},
+            headers: {"Content-type": "application/json"},
             body:
                 JSON.stringify({
                     customerId: Number(customerId),

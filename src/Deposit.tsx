@@ -2,16 +2,16 @@ import { useState } from "react"
 
 const Deposit = () => {
     const [customerId, setCustomerId] = useState("")
-    const [accountId , setAccountId] = useState("")
+    const [accountId, setAccountId] = useState("")
     const [amount, setAmount] = useState("")
     const [response, setResponse] = useState(null)
 
-    const BASE_URL = "https://localhost:7031/api/account/deposit"
+    const BASE_URL = "https://localhost:7013/api/account/deposit"
 
     async function handleSubmit() {
         const res = await fetch(BASE_URL, {
             method: "POST",
-            headers: {"Content-type": "application-json"},
+            headers: {"Content-type": "application/json"},
             body:
                 JSON.stringify({
                     customerId: Number(customerId),
